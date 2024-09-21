@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Üdvözöljük az RT Inspect rendszerben!</h1>
+    {% if current_user.is_authenticated %}
+        <p>Bejelentkezett felhasználó: {{ current_user.username }}</p>
+    {% endif %}
+{% endblock %}

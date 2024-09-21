@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Bejelentkezés</h1>
+    <form action="" method="post" novalidate>
+        <div>
+            <label for="username">Felhasználónév:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Jelszó:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" value="Bejelentkezés">
+        </div>
+    </form>
+{% endblock %}

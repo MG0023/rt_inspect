@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RT Inspect{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">Feladatok</a>
+                    <ul class="submenu">
+                        <li><a href="#">Szemle</a></li>
+                        <li><a href="#">Szerviz</a></li>
+                        <li><a href="#">Gumis</a></li>
+                        <li><a href="#">Biztosítás</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="{% if request.endpoint == 'lists' %}active{% endif %}">Listák</a>
+                    <ul class="submenu">
+                        <li><a href="#">Szemlék</a></li>
+                        <li><a href="#">Riportok</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="{% if request.endpoint == 'settings' %}active{% endif %}">Beállítások</a>
+                    <ul class="submenu">
+                        <li><a href="#">Funkciók</a></li>
+                        <li>
+                            <a href="#">Törzsek</a>
+                            <ul class="sub-submenu">
+                                <li><a href="#">Jármű törzs</a></li>
+                                <li><a href="#">Tartozékok</a></li>
+                                <li><a href="#">Userek</a></li>
+                                <li><a href="#">Paraméterek</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('login') }}" class="{% if request.endpoint == 'login' %}active{% endif %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
